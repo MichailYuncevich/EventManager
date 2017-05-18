@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.tonys.event.MainActivity">
+
+    <item
+        android:id="@+id/action_templates"
+        android:orderInCategory="100"
+        android:title="Templates"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sync"
+        android:orderInCategory="200"
+        android:title="Sync"
+        android:icon="@android:drawable/ic_popup_sync"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="300"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_bin"
+        android:orderInCategory="400"
+        android:title="Bin"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction=""/>
+</menu>
