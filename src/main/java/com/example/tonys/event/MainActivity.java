@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static ArrayList<String> categoriesList = new ArrayList<String>();
     ArrayList<Event> events = new ArrayList<Event>();
 
     @Override
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
                 ListView lvEvents = (ListView) findViewById(R.id.lvEvents);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
-                        android.R.layout.simple_list_item_1, eventsArray);
+                        android.R.layout.simple_list_item_1, eventsArray);//change on eventsList
 
                 lvEvents.setAdapter(adapter);
             }

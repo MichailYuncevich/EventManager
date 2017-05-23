@@ -8,44 +8,30 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Objects;
 
 /**
  * Created by TonyS
  */
 
 public class EventActivity extends Activity{
-    ArrayList<String> categoriesList= new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        String[] data = {"one", "two", "three", "four", "five"};
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setAdapter(adapter);
-        spinner.setPrompt("Categories");
-        spinner.setSelection(0);
-//        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view,
-//                                       int position, long id) {
-//                Snackbar.make(findViewById(R.id.saveButton), "Position = " + position,
-//                        Snackbar.LENGTH_LONG).show();
-//            }
-//            @Override
-//            public void onNothingSelected(AdapterView<?> arg0) {
-//            }
-//        });
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, MainActivity.categoriesList);
+        AutoCompleteTextView editCategoryAuto = (AutoCompleteTextView)
+                findViewById(R.id.editCategory);
+        editCategoryAuto.setAdapter(adapter);
 
         Button saveButton = (Button)findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +52,18 @@ public class EventActivity extends Activity{
                         phoneNumber = editPhoneNumber.getText().toString(),
                         description = editDescription.getText().toString(),
                         category = editCategory.getText().toString();
+
+                boolean searchSucc = false;
+                for(String categoryF: (MainActivity.categoriesList)){
+                    if(Objects.equals(categoryF, category)){
+                        searchSucc = true;
+                        break;
+                    }
+                }
+
+                if(!searchSucc){
+                    MainActivity.categoriesList.add(category);
+                }
 
                 int day = Integer.parseInt((String) date.subSequence(0,2));
                 int month = Integer.parseInt((String) date.subSequence(3,5));
