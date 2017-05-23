@@ -14,7 +14,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by TonyS on 16-May-17.
+ * Created by TonyS
  */
 
 public class EventActivity extends Activity{

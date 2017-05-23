@@ -1,10 +1,10 @@
 package com.example.tonys.event;
 
 /**
- * Created by TonyS on 16-May-17.
+ * Created by TonyS
  */
 
-public class Event {
+class Event {
     private String  name,
             date,
             email,
@@ -12,9 +12,9 @@ public class Event {
             description,
             category;
 
-    public Event(String nName,String nDate,
-                 String nEmail, String nPhoneNumber,
-                 String nDescription, String nCategory){
+    Event(String nName, String nDate,
+          String nEmail, String nPhoneNumber,
+          String nDescription, String nCategory){
         name = nName;
         date = nDate;
         email = nEmail;

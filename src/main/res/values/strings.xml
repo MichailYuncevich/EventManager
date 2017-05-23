@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Events</string>
     <string name="action_settings">Settings</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+    <string name="_03_05_2017">03.05.2017</string>
+    <string name="johndoe_example_com">JohnDoe@example.com</string>
+    <string name="_375_22_747_65_27">+375-22-747-65-27</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
 </resources>

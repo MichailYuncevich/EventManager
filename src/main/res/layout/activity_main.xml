@@ -46,15 +46,18 @@
     <ListView
         android:id="@+id/lvEvents"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="337dp"
         android:layout_marginTop="400dp"
-        android:visibility="visible" />
+        android:visibility="visible"/>
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
+        android:visibility="visible"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
