@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-    public static ArrayList<String> categoriesList = new ArrayList<String>();
+    static ArrayList<String> categoriesList = new ArrayList<String>();
     ArrayList<Event> events = new ArrayList<Event>();
 
     @Override
@@ -56,22 +56,18 @@ public class MainActivity extends AppCompatActivity {
                 for (int j = 0; events.size() > j; j++) {
                     if(Objects.equals(events.get(j).getDate(), selectedDate)) {
                         eventsList.add(events.get(j).getName());
-                        System.out.println(events.get(j).getDate() + " yes");
                         Snackbar.make(findViewById(R.id.action_sync), events.get(j).getName(),
                                 Snackbar.LENGTH_LONG).show();
                     }
                     else{
-                        System.out.println(events.get(j).getDate() + "!=" + selectedDate);
-                        Snackbar.make(findViewById(R.id.action_sync), "nope",
+                        Snackbar.make(findViewById(R.id.action_sync), "Nope",
                                 Snackbar.LENGTH_LONG).show();
                     }
                 }
 
-                String [] eventsArray = eventsList.toArray(new String[eventsList.size()]);
-
                 ListView lvEvents = (ListView) findViewById(R.id.lvEvents);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,
-                        android.R.layout.simple_list_item_1, eventsArray);//change on eventsList
+                        android.R.layout.simple_list_item_1, eventsList);
 
                 lvEvents.setAdapter(adapter);
             }
@@ -116,16 +112,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         switch(id){
