@@ -76,5 +76,27 @@
         android:text="@string/category"
         android:gravity="center"/>
 
+    <!-- <AutoCompleteTextView
+        android:id="@+id/editCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:ems="10"
+        android:inputType="textAutoComplete"
+        android:text="@string/category"
+        android:gravity="center" />
+        -->
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:inputType="textAutoComplete">
+    </Spinner>
+
 
 </android.support.design.widget.CoordinatorLayout>
