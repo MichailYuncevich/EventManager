@@ -5,7 +5,7 @@ package com.example.tonys.event;
  */
 
 class Event {
-    private String  name,
+    private String name,
             date,
             email,
             phoneNumber,
@@ -27,4 +27,8 @@ class Event {
         return name;
     }
     public String getDate() {return date;}
+    public String getEmail(){return email;}
+    public String getPhoneNumber(){return phoneNumber;}
+    public String getDescription() {return description;}
+    public String getCategory(){return category;}
 }
