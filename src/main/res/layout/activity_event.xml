@@ -13,61 +13,68 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="500dp"
         android:layout_marginTop="20dp"
-        android:text="Save" />
+        android:text="Save"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/editName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="250dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Name"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/editDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="300dp"
         android:ems="10"
         android:inputType="date"
-        android:text="03.05.2017"/>
+        android:text="03.05.2017"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="350dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="JohnDoe@example.com"/>
+        android:text="JohnDoe@example.com"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/editPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="400dp"
         android:ems="10"
         android:inputType="number"
-        android:text="+375-22-747-65-27"/>
+        android:text="+375-22-747-65-27"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/editDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="450dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Description" />
+        android:text="Description"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/editCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="500dp"
         android:ems="10"
         android:inputType="textAutoComplete"
-        android:text="Category" />
+        android:text="Category"
+        android:gravity="center"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
