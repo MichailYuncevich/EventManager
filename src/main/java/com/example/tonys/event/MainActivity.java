@@ -9,8 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +26,44 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        CalendarView calV =(CalendarView) findViewById(R.id.calendarView);
+        calV.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year,
+                                            int month, int dayOfMonth) {
+
+                String selectedDate = "";
+
+                if(dayOfMonth < 10){
+                    selectedDate += String.valueOf('0');
+                }
+
+                selectedDate += String.valueOf((dayOfMonth) +
+                        ".");
+
+                if(month < 10){
+                    selectedDate += String.valueOf('0');
+                }
+
+                selectedDate += String.valueOf((month + 1) +
+                        "." + year);
+
+                System.out.println(events.size());
+                for (int j = 0; events.size() > j; j++) {
+                    if(Objects.equals(events.get(j).getDate(), selectedDate)) {
+                        System.out.println(events.get(j).getDate() + " yes");
+                        Snackbar.make(findViewById(R.id.action_sync), events.get(j).getName(), Snackbar.LENGTH_LONG).show();
+                    }
+                    else{
+                        System.out.println(events.get(j).getDate() + "!=" + selectedDate);
+                        Snackbar.make(findViewById(R.id.action_sync), "nope", Snackbar.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
 
         FloatingActionButton fabEdditing = (FloatingActionButton) findViewById(R.id.fabAdding);
         fabEdditing.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                         phoneNumber = data.getStringExtra("com.example.tonys.event.phoneNumber"),
                         description = data.getStringExtra("com.example.tonys.event.description"),
                         category = data.getStringExtra("com.example.tonys.event.category");
+
+                events.add(new Event(name,date,email,phoneNumber,description,category));
 
                 Snackbar.make(findViewById(R.id.action_sync),name + " " +
                                 date + " " +
